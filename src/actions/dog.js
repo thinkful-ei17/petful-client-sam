@@ -37,24 +37,24 @@ export const fetchDog = () => dispatch => {
         )
 };
 
-export const FETCH_ADOPT_DOG_REQUEST = 'FETCH_ADOPT_DOG_REQUEST';
-export const fetchAdoptDogRequest = () => ({
-    type: FETCH_ADOPT_DOG_REQUEST
+export const ADOPT_DOG_REQUEST = 'ADOPT_DOG_REQUEST';
+export const adoptDogRequest = () => ({
+    type: ADOPT_DOG_REQUEST
 });
 
-export const FETCH_ADOPT_DOG_ERROR = 'FETCH_ADOPT_DOG_ERROR';
-export const fetchAdoptDogError = error => ({
-    type: FETCH_ADOPT_DOG_ERROR,
+export const ADOPT_DOG_ERROR = 'ADOPT_DOG_ERROR';
+export const adoptDogError = error => ({
+    type: ADOPT_DOG_ERROR,
     error
 });
 
-export const FETCH_ADOPT_DOG_SUCCESS = 'FETCH_ADOPT_DOG_SUCCESS';
-export const fetchAdoptDogSucess = () => ({
-    type: FETCH_ADOPT_DOG_SUCCESS
+export const ADOPT_DOG_SUCCESS = 'ADOPT_DOG_SUCCESS';
+export const adoptDogSucess = () => ({
+    type: ADOPT_DOG_SUCCESS
 });
 
-export const fetchAdoptDog = () => dispatch => {
-    dispatch(fetchAdoptDogRequest());
+export const adoptDog = () => dispatch => {
+    dispatch(adoptDogRequest());
     return fetch(`${REACT_APP_API_BASE_URL}/dog`,
         {
             method: 'DELETE'
@@ -64,10 +64,10 @@ export const fetchAdoptDog = () => dispatch => {
             }
             return res.status(204).end()
         }).then(() =>
-            dispatch(fetchAdoptDogSucess())
+            dispatch(adoptDogSucess())
         ).then(() => 
             dispatch(fetchDog())
         ).catch(err =>
-            dispatch(fetchAdoptDogError(err))
+            dispatch(adoptDogError(err))
         )
 };

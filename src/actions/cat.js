@@ -37,24 +37,24 @@ export const fetchCat = () => dispatch => {
         )
 };
 
-export const FETCH_ADOPT_CAT_REQUEST = 'FETCH_ADOPT_CAT_REQUEST';
-export const fetchAdoptCatRequest = () => ({
-    type: FETCH_ADOPT_CAT_REQUEST
+export const ADOPT_CAT_REQUEST = 'ADOPT_CAT_REQUEST';
+export const adoptCatRequest = () => ({
+    type: ADOPT_CAT_REQUEST
 });
 
-export const FETCH_ADOPT_CAT_ERROR = 'FETCH_ADOPT_CAT_ERROR';
-export const fetchAdoptCatError = error => ({
-    type: FETCH_ADOPT_CAT_ERROR,
+export const ADOPT_CAT_ERROR = 'ADOPT_CAT_ERROR';
+export const adoptCatError = error => ({
+    type: ADOPT_CAT_ERROR,
     error
 });
 
-export const FETCH_ADOPT_CAT_SUCCESS = 'FETCH_ADOPT_CAT_SUCCESS';
-export const fetchAdoptCatSucess = () => ({
-    type: FETCH_ADOPT_CAT_SUCCESS
+export const ADOPT_CAT_SUCCESS = 'ADOPT_CAT_SUCCESS';
+export const adoptCatSucess = () => ({
+    type: ADOPT_CAT_SUCCESS
 });
 
-export const fetchAdoptCat = () => dispatch => {
-    dispatch(fetchAdoptCatRequest());
+export const adoptCat = () => dispatch => {
+    dispatch(adoptCatRequest());
     return fetch(`${REACT_APP_API_BASE_URL}/cat`,
         {
             method: 'DELETE'
@@ -64,10 +64,10 @@ export const fetchAdoptCat = () => dispatch => {
             }
             return res.status(204).end()
         }).then(() =>
-            dispatch(fetchAdoptCatSucess())
+            dispatch(adoptCatSucess())
         ).then(() => 
             dispatch(fetchCat())
         ).catch(err =>
-            dispatch(fetchAdoptCatError(err))
+            dispatch(adoptCatError(err))
         )
 };
