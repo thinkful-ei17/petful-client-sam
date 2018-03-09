@@ -17,7 +17,7 @@ export const fetchCatSucess = cat => ({
     cat
 });
 
-export const fetchCat = dispatch => {
+export const fetchCat = () => dispatch => {
     dispatch(fetchCatRequest());
     return fetch(`${REACT_APP_API_BASE_URL}/cat`,
         {
@@ -50,7 +50,7 @@ export const fetchAdoptCatSucess = () => ({
     type: FETCH_ADOPT_CAT_SUCCESS
 });
 
-export const fetchAdoptCat = dispatch => {
+export const fetchAdoptCat = () => dispatch => {
     dispatch(fetchAdoptCatRequest());
     return fetch(`${REACT_APP_API_BASE_URL}/cat`,
         {

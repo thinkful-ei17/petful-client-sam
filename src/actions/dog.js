@@ -17,7 +17,7 @@ export const fetchDogSucess = dog => ({
     dog
 });
 
-export const fetchDog = dispatch => {
+export const fetchDog = () => dispatch => {
     dispatch(fetchDogRequest());
     return fetch(`${REACT_APP_API_BASE_URL}/dog`,
         {
@@ -50,7 +50,7 @@ export const fetchAdoptDogSucess = () => ({
     type: FETCH_ADOPT_DOG_SUCCESS
 });
 
-export const fetchAdoptDog = dispatch => {
+export const fetchAdoptDog = () => dispatch => {
     dispatch(fetchAdoptDogRequest());
     return fetch(`${REACT_APP_API_BASE_URL}/dog`,
         {

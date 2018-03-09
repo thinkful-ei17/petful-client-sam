@@ -4,7 +4,11 @@ export default class Pet extends React.Component {
     render() {
 
         const pet = this.props.petToAdopt;
-
+        
+        if (!pet) {
+            return (<div></div>)
+        }
+        
         return (
             <section className='pet-information'>
                 <header>
