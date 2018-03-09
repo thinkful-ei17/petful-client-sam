@@ -1,4 +1,5 @@
 import React from 'react';
+import Pet from './components/Pet'
 
 export default class Dashboard extends React.Component {
     constructor(props) {
@@ -6,50 +7,32 @@ export default class Dashboard extends React.Component {
     };
 
     render() {
-        
-        const dog = this.props.dogToAdopt;
-        const cat = this.props.catToAdopt;
+
+
+        const dog = {
+            imageURL: 'http://www.dogster.com/wp-content/uploads/2015/05/Cute%20dog%20listening%20to%20music%201_1.jpg',
+            imageDescription: 'A smiling golden-brown golden retreiver listening to music.',
+            name: 'Zeus',
+            sex: 'Male',
+            age: 3,
+            breed: 'Golden Retriever',
+            story: 'Owner Passed away'
+        };
+
+        const cat = {
+            imageURL:'https://assets3.thrillist.com/v1/image/2622128/size/tmg-slideshow_l.jpg',
+            imageDescription: 'Orange bengal cat with black stripes lounging on concrete.',
+            name: 'Fluffy',
+            sex: 'Female',
+            age: 2,
+            breed: 'Bengal',
+            story: 'Thrown on the street'
+        };
 
         return (
             <div className='dashboard'>
-                <section className='cat adoption-information'>
-                    <header>
-                        <img src={cat.imageURL} alt={cat.imageDescription} />
-                        {cat.name}
-                    </header>
-                    <main>
-                        <dl>
-                            <dt>Sex:</dt>
-                            <dd>{cat.sex}</dd>
-                            <dt>Age:</dt>
-                            <dd>{cat.age}</dd>
-                            <dt>Breed:</dt>
-                            <dd>{cat.breed}</dd>
-                            <dt>Story:</dt>
-                            <dd>{cat.story}</dd>
-                        </dl>
-                        <button>Adopt</button>
-                    </main>
-                </section>
-                <section className='dog adoption-information'>
-                    <header>
-                        <img src={dog.imageURL} alt={dog.imageDescription} />
-                        {dog.name}
-                    </header>
-                    <main>
-                        <dl>
-                            <dt>Sex:</dt>
-                            <dd>{dog.sex}</dd>
-                            <dt>Age:</dt>
-                            <dd>{dog.age}</dd>
-                            <dt>Breed:</dt>
-                            <dd>{dog.breed}</dd>
-                            <dt>Story:</dt>
-                            <dd>{dog.story}</dd>
-                        </dl>
-                        <button>Adopt</button>
-                    </main>
-                </section>
+                <Pet petToAdopt={cat} />
+                <Pet petToAdopt={dog} />
             </div>
         )
     }
