@@ -1,13 +1,16 @@
 import React from 'react';
-import Pet from './components/Pet'
+import Pet from './components/Pet';
 
 export default class Dashboard extends React.Component {
-    constructor(props) {
-        super(props);
+    onAdoptCat() {
+        console.log('A cat was adopted.');
+    };
+
+    onAdoptDog() {
+        console.log('A dog was adopted.')
     };
 
     render() {
-
 
         const dog = {
             imageURL: 'http://www.dogster.com/wp-content/uploads/2015/05/Cute%20dog%20listening%20to%20music%201_1.jpg',
@@ -31,8 +34,8 @@ export default class Dashboard extends React.Component {
 
         return (
             <div className='dashboard'>
-                <Pet petToAdopt={cat} />
-                <Pet petToAdopt={dog} />
+                <Pet petToAdopt={cat} onAdoptPet={this.onAdoptCat} />
+                <Pet petToAdopt={dog} onAdoptPet={this.onAdoptDog} />
             </div>
         )
     }
