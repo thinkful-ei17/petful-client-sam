@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { fetchCat, adoptCat } from './actions/cat';
 import { fetchDog, adoptDog } from './actions/dog';
 import Pet from './components/Pet';
+import './Dashboard.css';
 
 export class Dashboard extends React.Component {
     componentDidMount() {
