@@ -6,7 +6,7 @@ export const fetchDogRequest = () => ({
 });
 
 export const FETCH_DOG_ERROR = 'FETCH_DOG_ERROR';
-export const fetchDogError = () => ({
+export const fetchDogError = error => ({
     type: FETCH_DOG_ERROR,
     error
 });
@@ -40,7 +40,7 @@ export const fetchAdoptDogRequest = () => ({
 });
 
 export const FETCH_ADOPT_DOG_ERROR = 'FETCH_ADOPT_DOG_ERROR';
-export const fetchAdoptDogError = () => ({
+export const fetchAdoptDogError = error => ({
     type: FETCH_ADOPT_DOG_ERROR,
     error
 });

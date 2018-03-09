@@ -6,7 +6,7 @@ export const fetchCatRequest = () => ({
 });
 
 export const FETCH_CAT_ERROR = 'FETCH_CAT_ERROR';
-export const fetchCatError = () => ({
+export const fetchCatError = error => ({
     type: FETCH_CAT_ERROR,
     error
 });
@@ -40,7 +40,7 @@ export const fetchAdoptCatRequest = () => ({
 });
 
 export const FETCH_ADOPT_CAT_ERROR = 'FETCH_ADOPT_CAT_ERROR';
-export const fetchAdoptCatError = () => ({
+export const fetchAdoptCatError = error => ({
     type: FETCH_ADOPT_CAT_ERROR,
     error
 });

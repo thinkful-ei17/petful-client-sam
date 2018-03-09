@@ -5,7 +5,7 @@ import {
     FETCH_ADOPT_DOG_REQUEST,
     FETCH_ADOPT_DOG_SUCCESS,
     FETCH_ADOPT_DOG_ERROR,
-} from '../actions/cat';
+} from '../actions/dog';
 
 const initialState = {
     loading: false,
