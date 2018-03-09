@@ -17,8 +17,13 @@ export class Dashboard extends React.Component {
 
         return (
             <div className='dashboard'>
-                <Pet petToAdopt={cat} onAdoptPet={() => this.props.dispatch(adoptCat())} />
-                <Pet petToAdopt={dog} onAdoptPet={() => this.props.dispatch(adoptDog())} />
+                <h1>
+                    Petful Adoption Center
+                </h1>
+                <div className='pet-container'>
+                    <Pet petToAdopt={cat} onAdoptPet={() => this.props.dispatch(adoptCat())} />
+                    <Pet petToAdopt={dog} onAdoptPet={() => this.props.dispatch(adoptDog())} />
+                </div>
             </div>
         )
     }
