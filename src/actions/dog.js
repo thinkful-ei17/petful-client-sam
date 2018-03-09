@@ -14,14 +14,17 @@ export const fetchDogError = error => ({
 export const FETCH_DOG_SUCCESS = 'FETCH_DOG_SUCCESS';
 export const fetchDogSucess = dog => ({
     type: FETCH_DOG_SUCCESS,
-    dog
+    data: dog
 });
 
 export const fetchDog = () => dispatch => {
     dispatch(fetchDogRequest());
     return fetch(`${REACT_APP_API_BASE_URL}/dog`,
         {
-            method: 'GET'
+            method: 'GET',
+            headers: {
+                "Accept": "application/json"
+            }
         }).then(res => {
             if (!res.ok) {
                 return Promise.reject('Something has gone wrong!');

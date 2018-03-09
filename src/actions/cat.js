@@ -14,14 +14,17 @@ export const fetchCatError = error => ({
 export const FETCH_CAT_SUCCESS = 'FETCH_CAT_SUCCESS';
 export const fetchCatSucess = cat => ({
     type: FETCH_CAT_SUCCESS,
-    cat
+    data: cat
 });
 
 export const fetchCat = () => dispatch => {
     dispatch(fetchCatRequest());
     return fetch(`${REACT_APP_API_BASE_URL}/cat`,
         {
-            method: 'GET'
+            method: 'GET',
+            headers: {
+                "Accept": "application/json"
+            }
         }).then(res => {
             if (!res.ok) {
                 return Promise.reject('Something has gone wrong!');

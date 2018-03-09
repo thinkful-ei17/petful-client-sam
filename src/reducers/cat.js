@@ -21,7 +21,7 @@ export const reducer = (state = initialState, action) => {
     } else if (action.type === FETCH_CAT_SUCCESS) {
         return Object.assign({}, state, {
             loading: false,
-            data: action.cat,
+            data: action.data,
             error: null
         })
     } else if (action.type === FETCH_CAT_ERROR) {
