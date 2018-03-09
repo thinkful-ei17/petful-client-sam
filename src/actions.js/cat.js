@@ -10,7 +10,7 @@ export const fetchCatError = () => ({
 });
 
 export const FETCH_CAT_SUCCESS = 'FETCH_CAT_SUCCESS';
-export const fetchCatSucess = () => ({
+export const fetchCatSucess = cat => ({
     type: FETCH_CAT_SUCCESS,
     cat
 });
