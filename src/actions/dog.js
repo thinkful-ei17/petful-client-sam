@@ -1,3 +1,5 @@
+import { REACT_APP_API_BASE_URL } from '../config';
+
 export const FETCH_DOG_REQUEST = 'FETCH_DOG_REQUEST';
 export const fetchDogRequest = () => ({
     type: FETCH_DOG_REQUEST
@@ -17,7 +19,7 @@ export const fetchDogSucess = dog => ({
 
 export const fetchDog = dispatch => {
     dispatch(fetchDogRequest());
-    return fetch('http://localhost:8080/api/dog',
+    return fetch(`${REACT_APP_API_BASE_URL}/dog`,
         {
             method: 'GET'
         }).then(res => {
@@ -50,7 +52,7 @@ export const fetchAdoptDogSucess = () => ({
 
 export const fetchAdoptDog = dispatch => {
     dispatch(fetchAdoptDogRequest());
-    return fetch('http://localhost:8080/api/dog',
+    return fetch(`${REACT_APP_API_BASE_URL}/dog`,
         {
             method: 'DELETE'
         }).then(res => {

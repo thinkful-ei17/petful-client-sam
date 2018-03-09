@@ -11,7 +11,7 @@ const initialState = {
     loading: false,
     error: null,
     data: null
-}
+};
 
 export const reducer = (state = initialState, action) => {
     if (action.type === FETCH_CAT_REQUEST) {
@@ -46,4 +46,4 @@ export const reducer = (state = initialState, action) => {
     } else {
         return state;
     }
-}
+};
